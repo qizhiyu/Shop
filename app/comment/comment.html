@@ -1,0 +1,25 @@
+﻿<section class="mainbar" data-ng-controller="comment as vm">
+	<section class="matter">
+		<div class="container">
+			<div class="row">
+
+				<div class="widget wviolet">
+					<div data-cc-widget-header title="{{vm.title}}"></div>
+					<div class="widget-content ">
+						<ng-include src="add.html"></ng-include>
+						<div class="btn-group">
+							<a class="btn btn-info btn-form-md" data-ng-href="/#/comment/addcomment" href="/#/comment/addcomment><i class=" fa fa-plus"></i><span>Add Comment</span></a>
+						</div>
+					</div>
+
+					<div class="widget-content user">
+						<div ng-bind-html="vm.comments">comments</div>
+					</div>
+					<div class="widget-foot">
+						<div class="clearfix"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</section>

@@ -1,0 +1,51 @@
+﻿<section class="mainbar" data-ng-controller="admin as vm">
+    <section class="matter">
+        <div class="container">
+            <div class="row">
+                <div class="widget wviolet">
+                    <div data-cc-widget-header title="{{vm.title}}"></div>
+                    <div class="widget-content user">
+						<form name="myForm" novalidate ng-submit="vm.addUser(vm.newUser)">
+							<div class="well">
+								<div class="form-group">
+									<label>Name:</label>
+									<input type="text" class="form-control" name="userName" required
+										   data-ng-model="vm.newUser.Name" />
+								</div>
+								<div class="form-group">
+									<label>Address:</label>
+									<input type="text" class="form-control" name="userAddress" required
+										   data-ng-model="vm.newUser.Address" />
+								</div>
+								<div class="form-group">
+									<label>Password:</label>
+									<input type="password" class="form-control" name="userPassword" required
+										   data-ng-model="vm.newUser.Password" />
+								</div>
+								<button type="submit" class="btn btn-primary btn-block"
+										ng-disabled="myForm.$invalid" data-ng-click="vm.save()">
+									OK
+								</button>
+							</div>
+							<div class="well">
+								<div>
+									Message: {{vm.message}}
+								</div>
+								<div>
+									Valid:
+									<span class="summary"
+										  ng-class="myForm.$valid ? 'ng-valid' : 'ng-invalid'">
+										Please check input
+									</span>
+								</div>
+							</div>
+						</form>
+                    </div>
+                    <div class="widget-foot">
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</section>
