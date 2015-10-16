@@ -1,6 +1,0 @@
-C:\work\SPA\HotTowel\bin\HotTowel.dll.config
-C:\work\SPA\HotTowel\bin\HotTowel.dll
-C:\work\SPA\HotTowel\bin\HotTowel.pdb
-C:\work\SPA\HotTowel\obj\Debug\HotTowel.csprojResolveAssemblyReference.cache
-C:\work\SPA\HotTowel\obj\Debug\HotTowel.dll
-C:\work\SPA\HotTowel\obj\Debug\HotTowel.pdb
