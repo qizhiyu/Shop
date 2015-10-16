@@ -10,14 +10,15 @@
         var vm = this;
         vm.title = 'Register';
         vm.message = '';
-        activate();
 
-        function activate() {
-            common.activateController([], controllerId)
+        vm.activate = function () {
+        	common.activateController([], controllerId)
                 .then(function () { log('Activated Admin View'); });
-        }
+        };
 
-        function save() {
+        vm.activate();
+
+        vm.save = function () {
         	vm.message = 'Creating...';
         	var newUser = vm.newUser;
         	$http.post(common.serviceUrl + 'register', newUser).then(function (data) {
@@ -29,6 +30,6 @@
         	}, function () {
         		vm.message = "problem occured";
         	});
-        }
+        };
     }
 })();

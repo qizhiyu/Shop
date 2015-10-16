@@ -1,11 +1,11 @@
 ﻿<section class="mainbar" data-ng-controller="admin as vm">
-    <section class="matter">
-        <div class="container">
-            <div class="row">
-                <div class="widget wviolet">
-                    <div data-cc-widget-header title="{{vm.title}}"></div>
-                    <div class="widget-content user">
-						<form name="myForm" novalidate ng-submit="vm.addUser(vm.newUser)">
+	<section class="matter">
+		<div class="container">
+			<div class="row">
+				<div class="widget wviolet">
+					<div data-cc-widget-header title="{{vm.title}}"></div>
+					<div class="widget-content user">
+						<form name="myForm" novalidate ng-submit="vm.save()">
 							<div class="well">
 								<div class="form-group">
 									<label>Name:</label>
@@ -22,8 +22,7 @@
 									<input type="password" class="form-control" name="userPassword" required
 										   data-ng-model="vm.newUser.Password" />
 								</div>
-								<button type="submit" class="btn btn-primary btn-block"
-										data-ng-click="vm.save()">
+								<button type="submit" class="btn btn-primary btn-block">
 									OK
 								</button>
 							</div>
@@ -40,12 +39,12 @@
 								</div>
 							</div>
 						</form>
-                    </div>
-                    <div class="widget-foot">
-                        <div class="clearfix"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+					</div>
+					<div class="widget-foot">
+						<div class="clearfix"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
 </section>
