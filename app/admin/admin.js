@@ -21,7 +21,7 @@
         vm.save = function () {
         	vm.message = 'Creating...';
         	var newUser = vm.newUser;
-        	$http.post(common.serviceUrl + 'register', newUser).then(function (data) {
+        	$http.post(common.serviceUrl() + 'register', newUser).then(function (data) {
         		if (data == 'Created') {
         			vm.message = newUser.Name + ' is created successfully.';
         		}
