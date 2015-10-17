@@ -30,10 +30,10 @@
                     }
                 }
             }, {
-                url: '/admin',
+                url: '/reg',
                 config: {
                 	title: 'Register',
-                    templateUrl: 'app/admin/admin.html',
+                    templateUrl: 'app/reg/reg.html',
                     settings: {
                         nav: 2,
                         content: '<i class="fa fa-lock"></i> Register'

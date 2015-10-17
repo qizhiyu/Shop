@@ -74,8 +74,8 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="app\admin\admin.html" />
-    <Content Include="app\admin\admin.js" />
+    <Content Include="app\reg\reg.html" />
+    <Content Include="app\reg\reg.js" />
     <Content Include="app\app.js" />
     <Content Include="app\comment\add.html" />
     <Content Include="app\comment\comment.html" />
