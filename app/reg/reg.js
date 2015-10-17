@@ -14,7 +14,9 @@
 
 		vm.activate = function () {
 			common.activateController([], controllerId)
-                .then(function () { log('Activated Register View'); });
+                .then(function () {
+                	//log('Activated Register View');
+                });
 		};
 
 		vm.activate();

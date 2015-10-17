@@ -1,14 +1,14 @@
 ﻿(function () {
 	'use strict';
-	var controllerId = 'comment';
-	angular.module('app').controller(controllerId, ['common', '$http', '$sce', comment]);
+	var controllerId = 'goods';
+	angular.module('app').controller(controllerId, ['common', '$http', '$sce', goods]);
 
-	function comment(common, $http, $sce) {
+	function goods(common, $http, $sce) {
 		var getLogFn = common.logger.getLogFn;
 		var log = getLogFn(controllerId);
 
 		var vm = this;
-		vm.title = 'Comments';
+		vm.title = 'Goods';
 		vm.refresh = function () {
 			var url = '/d.html';
 			url = common.serviceUrl + 'htmlcomments';
@@ -20,7 +20,7 @@
 		vm.save = function () {
 			//log('Posting...');
 			var item = vm.newComment;
-			$http.post(common.serviceUrl + 'comment?name=' + item.Name, '"' + item.Content + '"').then(function (data) {
+			$http.post(common.serviceUrl + 'goods?name=' + item.Name, '"' + item.Content + '"').then(function (data) {
 				if (data.status == 200) {
 					vm.newComment = null;
 					log('Post success');
@@ -37,7 +37,7 @@
 		function activate() {
 			common.activateController([], controllerId)
                 .then(function () {
-                	//log('Activated comment View');
+                	//log('Activated goods View');
                 });
 		}
 

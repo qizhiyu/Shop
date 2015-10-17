@@ -59,6 +59,8 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="app\goods\goods.html" />
+    <Content Include="app\goods\goods.js" />
     <Content Include="fonts\fontawesome-webfont.woff" />
     <Content Include="fonts\fontawesome-webfont.ttf" />
     <Content Include="fonts\fontawesome-webfont.eot" />
@@ -77,7 +79,6 @@
     <Content Include="app\reg\reg.html" />
     <Content Include="app\reg\reg.js" />
     <Content Include="app\app.js" />
-    <Content Include="app\comment\add.html" />
     <Content Include="app\comment\comment.html" />
     <Content Include="app\comment\comment.js" />
     <Content Include="app\common\bootstrap\bootstrap.dialog.js" />
