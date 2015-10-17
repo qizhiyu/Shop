@@ -28,6 +28,8 @@
 					if (data.data == '"User Registered"') {
 						vm.failed = false;
 						vm.message = newUser.Name + ' is created successfully.';
+						vm.newUser = null;
+
 						log('Registration success');
 					}
 					else

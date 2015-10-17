@@ -1,15 +1,33 @@
-﻿<section class="mainbar" data-ng-controller="comment as vm">
+﻿<style>
+	textarea.form-control {
+		width: 100%;
+	}
+</style>
+<section class="mainbar" data-ng-controller="comment as vm">
 	<section class="matter">
 		<div class="container">
 			<div class="row">
-
 				<div class="widget wviolet">
 					<div data-cc-widget-header title="{{vm.title}}"></div>
 					<div class="widget-content ">
-						<ng-include src="add.html"></ng-include>
-						<div class="btn-group">
+						<form name="myForm" novalidate ng-submit="vm.save()">
+							<div class="well">
+								<div class="form-group">
+									<input type="text" class="form-control" name="userName" placeholder="Name" required
+										   data-ng-model="vm.newComment.Name" />
+								</div>
+								<div class="form-group">
+									<textarea rows="5" class="form-control" placeholder="Content" name="Content" required
+											  data-ng-model="vm.newComment.Content" />
+								</div>
+								<button type="submit" class="btn btn-primary btn-lg btn-block" ng-disabled="myForm.$invalid">
+									Post Comment
+								</button>
+							</div>
+						</form>
+						<!--<div class="btn-group">
 							<a class="btn btn-info btn-form-md" data-ng-href="/#/comment/addcomment" href="/#/comment/addcomment><i class=" fa fa-plus"></i><span>Add Comment</span></a>
-						</div>
+						</div>-->
 					</div>
 
 					<div class="widget-content user">
