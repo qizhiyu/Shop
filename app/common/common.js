@@ -28,10 +28,10 @@
         ['$q', '$rootScope', '$timeout', 'commonConfig', 'logger', common]);
 
     function common($q, $rootScope, $timeout, commonConfig, logger) {
-        var throttles = {};
+    	var throttles = {};
 
         var service = {
-        	serviceUrl:serviceUrl,
+        	serviceUrl:"http://redsox.tcs.auckland.ac.nz/BC/Open/Service.svc/",
             // common angular dependencies
             $broadcast: $broadcast,
             $q: $q,
@@ -47,8 +47,8 @@
 
         return service;
 
-        var svcUrl = "http://redsox.tcs.auckland.ac.nz/BC/Open/Service.svc/";
         function serviceUrl() {
+        	console.log('serviceUrl');
         	return svcUrl;
         }
 

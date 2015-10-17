@@ -1,4 +1,32 @@
-﻿<section class="mainbar" data-ng-controller="admin as vm">
+﻿<style>
+	form .ng-invalid-required.ng-dirty {
+		background-color: lightpink;
+	}
+
+	form .ng-invalid-email.ng-dirty {
+		background-color: lightgoldenrodyellow;
+	}
+
+	form .ng-valid.ng-dirty {
+		background-color: lightgreen;
+	}
+
+	span.summary.ng-invalid {
+		color: red;
+		font-weight: bold;
+	}
+
+	span.summary.ng-valid {
+		color: green;
+	}
+
+	div.error {
+		color: red;
+		font-weight: bold;
+	}
+</style>
+
+<section class="mainbar" data-ng-controller="admin as vm">
 	<section class="matter">
 		<div class="container">
 			<div class="row">
@@ -8,34 +36,24 @@
 						<form name="myForm" novalidate ng-submit="vm.save()">
 							<div class="well">
 								<div class="form-group">
-									<label>Name:</label>
-									<input type="text" class="form-control" name="userName" required
+									<input type="text" class="form-control" name="userName" placeholder="Name" required
 										   data-ng-model="vm.newUser.Name" />
 								</div>
 								<div class="form-group">
-									<label>Address:</label>
-									<input type="text" class="form-control" name="userAddress" required
+									<input type="text" class="form-control" placeholder="Address" name="userAddress" required
 										   data-ng-model="vm.newUser.Address" />
 								</div>
 								<div class="form-group">
-									<label>Password:</label>
-									<input type="password" class="form-control" name="userPassword" required
+									<input type="password" placeholder="Password" class="form-control" name="userPassword" required
 										   data-ng-model="vm.newUser.Password" />
 								</div>
-								<button type="submit" class="btn btn-primary btn-block">
-									OK
+								<button type="submit" class="btn btn-primary btn-lg btn-block" ng-disabled="myForm.$invalid">
+									Sign up
 								</button>
 							</div>
-							<div class="well">
+							<div class="">
 								<div>
-									Message: {{vm.message}}
-								</div>
-								<div>
-									Valid:
-									<span class="summary"
-										  ng-class="myForm.$valid ? 'ng-valid' : 'ng-invalid'">
-										Please check input
-									</span>
+									{{vm.message}}
 								</div>
 							</div>
 						</form>
