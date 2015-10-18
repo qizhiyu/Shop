@@ -22,31 +22,31 @@
             {
                 url: '/',
                 config: {
-                    templateUrl: 'app/dashboard/dashboard.html',
-                    title: 'dashboard',
+                	templateUrl: 'app/goods/goods.html',
+                    title: 'Your shop',
                     settings: {
                         nav: 1,
-                        content: '<i class="fa fa-dashboard"></i> Shop'
+                        content: '<i class="fa fa-home"></i> Your shop'
                     }
                 }
             }, {
                 url: '/reg',
                 config: {
-                	title: 'Register',
+                	title: 'Join the shop',
                     templateUrl: 'app/reg/reg.html',
                     settings: {
                         nav: 2,
-                        content: '<i class="fa fa-lock"></i> Register'
+                        content: '<i class="fa fa-sign-in"></i> Join the shop'
                     }
                 }
             }, {
             	url: '/comment',
             	config: {
-            		title: 'comment',
+            		title: 'Your comments',
             		templateUrl: 'app/comment/comment.html',
             		settings: {
             			nav: 2,
-            			content: '<i class="fa fa-lock"></i> Comment'
+            			content: '<i class="fa fa-bullhorn"></i> Your comments'
             		}
             	}
             }

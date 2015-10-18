@@ -9,25 +9,18 @@
 
 		var vm = this;
 		vm.title = 'Goods';
+		vm.criteria = { Type: 'Bluerays', Keyword: '' };
 		vm.refresh = function () {
-			var url = '/d.html';
-			url = common.serviceUrl + 'htmlcomments';
-			$http.get(url).success(function (data) {
-				vm.comments = $sce.trustAsHtml(data);
-			});
-		};
+			//console.debug(vm.criteria);
+			vm.tag = (vm.criteria.Type == 'Bluerays' ? 'br' : 'book');
 
-		vm.save = function () {
-			//log('Posting...');
-			var item = vm.newComment;
-			$http.post(common.serviceUrl + 'goods?name=' + item.Name, '"' + item.Content + '"').then(function (data) {
-				if (data.status == 200) {
-					vm.newComment = null;
-					log('Post success');
-					vm.refresh();
-				}
-			}, function () {
-				log("Post failed");
+			var url = common.serviceUrl + vm.tag + (vm.criteria.Keyword == '' ? 'list' : 'search?term=' + vm.criteria.Keyword);
+			$http.get(url).success(function (data) {
+				//console.debug(data);
+				if (vm.tag == 'br__')
+					processBlueray(data);
+				else
+					processBook(data);
 			});
 		};
 
@@ -41,10 +34,16 @@
                 });
 		}
 
-		function getComments() {
-			return datacontext.getComments().then(function (data) {
-				return vm.comments = data;
-			});
+		function processBook(data) {
+			var list = new Array();
+			for (var i = 0; i < data.length; i++) {
+				list.push({img: common.serviceUrl + vm.tag +'img?id='+data[i].Id, title:data[i].Title});
+			}
+			vm.data = list;
 		}
+
+		function processBlueray(data) {
+		}
+
 	}
 })();
