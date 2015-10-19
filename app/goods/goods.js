@@ -1,9 +1,9 @@
 ﻿(function () {
 	'use strict';
 	var controllerId = 'goods';
-	angular.module('app').controller(controllerId, ['common', '$http', '$sce', goods]);
+	angular.module('app').controller(controllerId, ['common', '$http', '$sce', '$window', goods]);
 
-	function goods(common, $http, $sce) {
+	function goods(common, $http, $sce, $window) {
 		var getLogFn = common.logger.getLogFn;
 		var log = getLogFn(controllerId);
 
@@ -24,6 +24,15 @@
 			});
 		};
 
+		vm.buy = function (xid) {
+			log("Buying");
+			var url = common.closedServiceUrl + vm.tag + 'buy?id=' + xid;
+			//$http.get(url).success(function (data) {
+			//	log("Thanks for your purchase");
+			//});
+			$window.open(url);
+		}
+
 		activate();
 		vm.refresh();
 
@@ -37,7 +46,12 @@
 		function processBook(data) {
 			var list = new Array();
 			for (var i = 0; i < data.length; i++) {
-				list.push({img: common.serviceUrl + vm.tag +'img?id='+data[i].Id, title:data[i].Title});
+				list.push({
+					id: data[i].Id,
+					img: common.serviceUrl + vm.tag + 'img?id=' + data[i].Id,
+					title: data[i].Title,
+					shopurl: common.closedServiceUrl + vm.tag + 'buy?id=' + data[i].Id
+				});
 			}
 			vm.data = list;
 		}

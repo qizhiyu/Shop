@@ -29,7 +29,7 @@
 						<div ng-repeat="item in vm.data" class="row vertical-align">
 							<div class="col-sm-3 vertical-align"><img src="{{item.img}}" style="width:100%" /></div>
 							<div class="col-sm-6 vertical-align" style=" vertical-align:middle">{{item.title}}</div>
-							<div class="col-sm-3 vertical-align"><input type="button" value="Buy now" class="form-control btn btn-success" /></div>
+							<div class="col-sm-3 vertical-align"><input type="button" value="Buy now" class="form-control btn btn-success" ng-click="vm.buy(item.id)"/></div>
 						</div>
 					</div>
 					<div class="widget-foot">

@@ -32,7 +32,8 @@
 
         var service = {
         	serviceUrl:"http://redsox.tcs.auckland.ac.nz/BC/Open/Service.svc/",
-            // common angular dependencies
+        	closedServiceUrl:"http://redsox.tcs.auckland.ac.nz/BC/Closed/Service.svc/",
+        	// common angular dependencies
             $broadcast: $broadcast,
             $q: $q,
             $timeout: $timeout,
@@ -46,11 +47,6 @@
         };
 
         return service;
-
-        function serviceUrl() {
-        	console.log('serviceUrl');
-        	return svcUrl;
-        }
 
         function activateController(promises, controllerId) {
             return $q.all(promises).then(function (eventArgs) {
